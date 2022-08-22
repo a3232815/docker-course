@@ -1,0 +1,11 @@
+version: '3.0'
+services:
+  my-app-gcc: 
+    image: my_gcc
+    ports:
+    - 3001:3001
+    restart: always
+    volumes:
+    - ~/cprogram:/code/c
+    tty: true
+    build: .

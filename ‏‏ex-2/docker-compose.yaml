@@ -1,0 +1,20 @@
+version: '3.0'
+services:
+  mysql:
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=elisheva
+      - MYSQL_PASSWORD=pass
+  wordpress:
+    image: wordpress
+    ports:
+      - 8080:8080
+    environment:
+      - WORDPRESS_DB_HOST=mysql
+      - WORDPRESS_DB_USER=elisheva
+      - WORDPRESS_DB_PASSWORD=pass
+      - WORDPRESS_DB_NAME=wordpress
